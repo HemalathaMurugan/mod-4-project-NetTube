@@ -4,7 +4,7 @@ import VideoCard from './VideoCard'
 export default class VideoList extends React.Component {
     render(){
         return(
-            <div>
+            <div className="video-list">
                 <h1>Video List</h1>
                 <VideoCard/>
             </div>
