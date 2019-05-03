@@ -4,7 +4,7 @@ import VideoList from './VideoList'
 export default class VideoContainer extends React.Component {
     render(){
         return(
-            <div>
+            <div className="video-container">
                 <h1>All Videos</h1>
                 <VideoList/>
             </div>
