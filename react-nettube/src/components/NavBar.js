@@ -6,9 +6,17 @@ export default class NavBar extends React.Component {
     render(){
         return(
             <div className="navigation-bar">
-                <h1>NETTube</h1>
-                <SearchBar/>
-                <MenuButton/>
+                    <div className="logo">
+                        <h1>NETTube</h1>
+                    </div>
+
+                    <div>
+                        <SearchBar/>
+                    </div>
+
+                    <div>
+                        <MenuButton/>
+                    </div>
             </div>
         )
     }
