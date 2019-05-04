@@ -5,7 +5,7 @@ export default class VideoContainer extends React.Component {
     render(){
         return(
             <div className="video-container">
-                <h1>All Videos</h1>
+                <h1>ALL VIDEOS</h1>
                 <VideoList/>
             </div>
         )

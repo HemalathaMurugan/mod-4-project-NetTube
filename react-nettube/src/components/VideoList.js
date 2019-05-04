@@ -5,19 +5,19 @@ export default class VideoList extends React.Component {
     render(){
         return(
             <div className="video-list">
-                <h1>Javascript</h1>
+                <h2>Javascript</h2>
                 <div className="video-list-javascript">
                     <VideoCard/>
                     <VideoCard/>
                     <VideoCard/>
                 </div>
 
-                <h1>Ruby</h1>
+                <h2>Ruby</h2>
                 <div className="video-list-ruby">
                     <VideoCard/>
                 </div>
 
-                <h1>React</h1>
+                <h2>React</h2>
                 <div className="video-list-react">
                     <VideoCard/>
                 </div>

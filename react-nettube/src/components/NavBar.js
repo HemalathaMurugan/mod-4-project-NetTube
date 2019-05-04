@@ -7,7 +7,7 @@ export default class NavBar extends React.Component {
         return(
             <div className="navigation-bar">
                     <div className="logo">
-                        <h1>NETTube</h1>
+                    <img src={require('../assets/nettube-logo.png')}/>
                     </div>
 
                     <div>
