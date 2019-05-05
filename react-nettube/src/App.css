@@ -21,10 +21,6 @@
 .logo {
   height: auto; 
   width: auto; 
-  /* transform: scale(0.7, 0.7);
-  -ms-transform: scale(0.7, 0.7);
-  -webkit-transform: scale(0.7, 0.7); */
-
 }
 
 /* search bar */
@@ -66,14 +62,15 @@ input[type=text] {
   z-index: 1;
 }
 
-.menu-content a {
+.menu-content li {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  list-style: none;
 }
 
-.menu-content a:hover {
+.menu-content li:hover {
   background-color: rgb(206, 201, 200);
 }
 
@@ -126,10 +123,31 @@ input[type=text] {
 
 .video-card {
   display: inline-block;
+  border: solid red;
+  padding: 30px;
 }
 
 .video-card-details {
   padding: -100px
+}
+
+/* login page */
+.login-form {
+  text-align: center;
+  border: solid white;
+  padding: 30px
+}
+
+button[type=submit] {
+  color: black
+}
+
+input[type=password] {
+  height: 30px;
+  width: 200px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  color: black
 }
 
 /* general */
