@@ -1,5 +1,6 @@
 .App {
   background-color: black;
+  color: white;
 }
 
 /* navigation bar */
@@ -18,27 +19,26 @@
 
 /* nettube logo */
 .logo {
-  font-family: 'Lato', sans-serif;
-  font-size: 100px;
-  letter-spacing: -1px;
-  text-shadow: 1px 1px 2px #c4c4c4;
-  text-align: left;
-  padding-right: 100px;
+  height: auto; 
+  width: auto; 
+  /* transform: scale(0.7, 0.7);
+  -ms-transform: scale(0.7, 0.7);
+  -webkit-transform: scale(0.7, 0.7); */
+
 }
 
 /* search bar */
 .search-bar {
   padding-right: 100px;
+  display: inline-block;
 }
 
 input[type=text] {
-  width: 300px;
+  height: 30px;
+  width: 200px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-  /* width: 100%; */
+  color: black
 }
 
 /* menu button */
@@ -85,16 +85,62 @@ input[type=text]:focus {
   background-color: rgb(245, 47, 12);
 }
 
+/* main page */
 .main-page {
-  height: 800px;
-  width: 100%
+  background-size: auto
 }
 
+/* video container */
+.video-container {
+  /* height: 80%; */
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  padding: 50px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.video-list {
+  /* padding: 20px; */
+}
+
+.video-list-javascript {
+  border: solid white;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  overflow: auto;
+  /* white-space: nowrap; */
+}
+
+.video-list-ruby {
+  border: solid white;
+  padding: 20px;
+}
+
+.video-list-react {
+  border: solid white;
+  padding: 20px;
+}
+
+.video-card {
+  display: inline-block;
+}
+
+.video-card-details {
+  padding: -100px
+}
+
+/* general */
 h1 {
   color: white;
+  text-align: center;
+  letter-spacing: 5px;
 }
 
-p {
-  font-family: 'Lato', sans-serif;
+h2 {
+  letter-spacing: 5px;
 }
+
 
