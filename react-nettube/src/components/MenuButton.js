@@ -13,6 +13,9 @@ export default class MenuButton extends React.Component {
                     <Link to="/user">
                         <li>My Channel</li>
                     </Link>
+                    <Link to="/video">
+                        <li>Video</li>
+                    </Link>
                         <li>Edit Profile</li>
                         <li>Add Video</li>
                         <li>Add Playlist</li>

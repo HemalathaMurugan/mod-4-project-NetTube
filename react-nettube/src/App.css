@@ -150,6 +150,21 @@ input[type=password] {
   color: black
 }
 
+/* video show page */
+.video-container {
+  text-align: center;
+}
+
+textarea {
+  color: black;
+}
+
+.comment {
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 /* general */
 h1 {
   color: white;
