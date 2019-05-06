@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
             end
         
             def index
-                render json: video.all
+                render json: Video.all
             end
         
             def show
@@ -49,9 +49,9 @@ class ApplicationController < ActionController::Base
         
             def define_current_video
                 if params[:id]
-                    @current_video = video.find(params[:id])
+                    @current_video = Video.find(params[:id])
                 else
-                    @current_video = video.new
+                    @current_video = Video.new
                 end
             end
         
