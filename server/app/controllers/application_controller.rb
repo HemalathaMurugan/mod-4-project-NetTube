@@ -11,52 +11,52 @@ class ApplicationController < ActionController::Base
             
             payload = JWT.decode(token, '5ebe2294ecd0e0f08eab7690d2a6ee69')[0]
 
-            before_action :define_current_dragon
+            before_action :define_current_video
 
             def create
-                dragon = Dragon.create(dragon_params)
-                render json: dragon
+                video = Video.create(video_params)
+                render json: video
             end
         
             def index
-                render json: Dragon.all
+                render json: video.all
             end
         
             def show
-                render json: current_dragon
+                render json: current_video
             end
         
             def update
-                if current_user == current_dragon.user
-                    current_dragon.update(dragon_params)
-                    render json: current_dragon
+                if current_user == current_video.user
+                    current_Video.update(video_params)
+                    render json: current_video
                 else
                     render json: {
                         error: true,
-                        message: 'That is not your dragon'
+                        message: ''
                     }
                 end
             end
         
             def destroy
-                current_dragon.destroy
-                render json: current_dragon
+                current_video.destroy
+                render json: current_video
             end
         
-            def dragon_params
+            def video_params
                 params.permit(:name, :image, :description, :atWar)
             end
         
-            def define_current_dragon
+            def define_current_video
                 if params[:id]
-                    @current_dragon = Dragon.find(params[:id])
+                    @current_video = video.find(params[:id])
                 else
-                    @current_dragon = Dragon.new
+                    @current_video = video.new
                 end
             end
         
-            def current_dragon
-                @current_dragon
+            def current_video
+                @current_video
             end
 
             @current_user = User.find(payload['id'])
