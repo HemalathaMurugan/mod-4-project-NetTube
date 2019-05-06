@@ -26,8 +26,8 @@ export default class VideoContainer extends React.Component {
 
     render(){
         return(
-            <div>
-                <h1>Video Container</h1>
+            <div className="video-container">
+                <h1>All Videos</h1>
                 <Filter filterVideos={this.filterVideos}/>
                 <VideoList videos={this.state.videos} filteredVideos={this.state.filteredVideos} filter={this.state.filter}/>
             </div>

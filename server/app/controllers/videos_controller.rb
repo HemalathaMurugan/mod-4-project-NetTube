@@ -54,7 +54,9 @@ class VideosController < ApplicationController
     private
     def video_params
         params.require(:video).permit(:user_id, :title, :description, :likes, :duration, :created_at, :videoFile)
+        
     def current_video
         @current_video
     end
+
 end
