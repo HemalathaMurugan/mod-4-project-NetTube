@@ -40,8 +40,6 @@ export default class Main extends React.Component {
     }
 
     loadVideos = () => {
-        console.log(this.state.searchResults)
-        console.log(this.state.videos)
         if(this.state.videos == this.state.searchResults){
             return <VideoContainer filterVideos={this.filterVideos} videos={this.state.videos} filteredVideos={this.state.filteredVideos} filter={this.state.filter}/>
         } else {
