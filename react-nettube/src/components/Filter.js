@@ -9,7 +9,7 @@ export default class Filter extends React.Component {
             key: 'All',
             text: 'All',
             value: 'All',
-            image: { avatar: true, src: 'https://www.ruby-lang.org/images/header-ruby-logo.png' },
+            image: { avatar: true, src: 'https://i.pinimg.com/originals/0f/8b/28/0f8b2870896edcde8f6149fe2733faaf.jpg' },
         },
         {
           key: 'Ruby',
