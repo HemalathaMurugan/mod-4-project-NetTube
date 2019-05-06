@@ -3,6 +3,11 @@ import SearchBar from './SearchBar'
 import MenuButton from './MenuButton'
 
 export default class NavBar extends React.Component {
+
+    handleSubmit = (value) => {
+        this.props.handleSubmit(value)
+    }
+
     render(){
         return(
             <div className="navigation-bar">
@@ -11,7 +16,7 @@ export default class NavBar extends React.Component {
                     </div>
 
                     <div>
-                        <SearchBar/>
+                        <SearchBar handleSubmit={this.props.handleSubmit}/>
                     </div>
 
                     <div>
