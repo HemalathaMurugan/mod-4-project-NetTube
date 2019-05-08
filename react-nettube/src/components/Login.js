@@ -13,7 +13,7 @@ class  Login extends  React.Component {
    let user_name =  e.target.user_name.value
    let password = e.target.password.value
    
-   fetch('http://localhost:3001/login',{
+   fetch('http://localhost:3000/login',{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -2,7 +2,6 @@ import React from 'react'
 
 export default class Test extends React.Component {
     render(){
-        console.log(this.props)
         return(	
             <div className="video-card">      
                 <div className="video-card-details">
