@@ -105,6 +105,8 @@ input[type=text] {
 
 .video-list-container {
   /* padding: 20px; */
+  text-align: left;
+  padding: 10px;
 }
 
 .video-list {
@@ -126,9 +128,12 @@ input[type=text] {
 }
 
 /* login page */
-.login-form {
+.login-form-container {
   text-align: center;
-  border: solid white;
+}
+
+.login-form {
+  border: solid red;
   padding: 30px
 }
 
@@ -163,10 +168,31 @@ textarea {
   padding: 10px;
 }
 
+/* new user form page */
+.new-user-form-container {
+  text-align: center;
+}
+
+.new-user-form {
+  border: solid red;
+  padding: 30px
+}
+
+/* add video form page */
+.add-video-form-container {
+  text-align: center;
+}
+
+.add-video-form {
+  border: solid red;
+  padding: 30px 
+}
+
+
 /* general */
 h1 {
   color: white;
-  text-align: left;
+  /* text-align: center; */
   letter-spacing: 5px;
 }
 
