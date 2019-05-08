@@ -1,25 +1,15 @@
 import React from 'react'
 import VideoContainer from './VideoContainer'
 import NavBar from './NavBar'
+import AddComment from './AddComment'
+import Test from './Test'
 
 
 export default class Main extends React.Component {
 
-    // state = {
-    //     videos: [],
-    //     searchResults: []
-    // }
-    videos = [{title: "Javascript", language: 'Javascript'},
-        {title: "Javascript", language: 'Javascript'},
-        {title: "Ruby", language: 'Ruby'},
-        {title: "Ruby", language: 'Ruby'},
-        {title: "Rails", language: 'Rails'},
-        {title: "Rails", language: 'Rails'},
-        {title: "React", language: 'React'},
-        {title: "React", language: 'React'}]
 
     state = {
-        videos: this.videos,
+        videos: [],
         filteredVideos: [],
         searchResults: this.videos,
         filter: 'All'
@@ -47,18 +37,24 @@ export default class Main extends React.Component {
         }
     }
 
+    loadTest = () => {
+        return this.state.videos.map(video => < Test {...video}/>)
+    }
+
     render(){
+        console.log(this.state.videos)
         return(
             <div className="main-page">
                 <NavBar handleSubmit={this.handleSubmit}/>
-                {this.loadVideos()}
+                {/* {this.loadVideos()} */}
+                {this.loadTest()}
             </div>
         )
     }
 
-    // componentDidMount(){
-    //     fetch('localhost:3000/videos')
-    //     .then((res) => {return res.json})
-    //     .then((videos) => this.setState({videos: videos}))      
-    // }
+    componentDidMount(){
+        fetch('http://localhost:3000/videos')
+        .then((res) => res.json())
+        .then((videos) => this.setState({videos: videos}))      
+    }
 }

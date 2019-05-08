@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
 
-    skip_before_action :verify_authenticity_token
+    # skip_before_action :verify_authenticity_token
     def index
         render json: Video.all
     end
@@ -15,11 +15,11 @@ class VideosController < ApplicationController
     end
 
     def index
-        render json: Video.all
+        render json: Video.all, methods: [ :url ]
     end
 
     def show
-        render json: current_video
+        render json: current_video,  methods: [ :url ]
     end
 
     def update
@@ -39,10 +39,6 @@ class VideosController < ApplicationController
         render json: current_video
     end
 
-    def video_params
-        params.permit(:title, :user_id, :description, :duration)
-    end
-
     def define_current_video
         if params[:id]
             @current_video = Video.find(params[:id])
@@ -53,10 +49,7 @@ class VideosController < ApplicationController
 
     private
     def video_params
-        params.require(:video).permit(:user_id, :title, :description, :likes, :duration, :created_at, :videoFile)
-        
-    def current_video
-        @current_video
+        params.require(:video).permit(:user_id, :title, :description, :language, :likes, :duration, :created_at, :videoFile)
     end
 
 end

@@ -5,6 +5,7 @@ import Login from './components/Login'
 import Video from './components/Video'
 import User from './components/User'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import NewVideoForm from './components/NewVideoForm'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact component={Main}/>
           <Route path="/video" component={Video}/>
           <Route path="/user" component={User}/>
+          <Route path="/addvideo" component={NewVideoForm}/>
         </Switch>
       </div>
     </Router>
