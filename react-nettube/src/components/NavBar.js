@@ -19,6 +19,10 @@ export default class NavBar extends React.Component {
                         <SearchBar handleSubmit={this.props.handleSubmit}/>
                     </div>
 
+                    <div className="welcome-user">
+                        <h4>Welcome, Josie!</h4>
+                    </div>
+
                     <div>
                         <MenuButton/>
                     </div>
