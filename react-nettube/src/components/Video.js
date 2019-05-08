@@ -2,6 +2,7 @@ import React from 'react'
 import AddComment from './AddComment'
 import CommentList from './CommentList'
 import NavBar from './NavBar'
+import VideoList from './VideoList'
 
 export default class Video extends React.Component {
     render(){
@@ -28,6 +29,10 @@ export default class Video extends React.Component {
               <CommentList />
               <br/>
               <AddComment />
+            </div>
+
+            <div className="suggested-videos-container">
+              <VideoList videos={this.props.videos}/>
             </div>
           </div>
         </div>
