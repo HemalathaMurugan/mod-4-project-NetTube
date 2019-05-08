@@ -14,7 +14,7 @@ export default class NewVideoForm extends React.Component {
       fetch('http://localhost:3000/videos', {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
           // 'Content-Type': 'application/json'
         },
         body: new FormData(event.target)
