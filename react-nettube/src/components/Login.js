@@ -26,8 +26,8 @@ class  Login extends  React.Component {
    .then(res=> res.json())
    .then(user => {
       localStorage.setItem('token', user.auth_token)
-    })    
-
+      this.props.history.replace('/main')
+    })
 }
 
 handleChange = (e) => {
