@@ -42,7 +42,7 @@ export default class Filter extends React.Component {
             placeholder='Select Language'
             fluid
             selection
-            options={this.languageOptions}
+            options={this.props.languageOptions}
             onChange={(_, selection) => {
                 this.props.filterVideos(selection.value)
             }}
