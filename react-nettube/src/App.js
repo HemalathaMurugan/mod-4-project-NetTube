@@ -28,7 +28,7 @@ function App() {
           <Route path="/login" component={Login}/>
           <Route path="/new" component={NewUser} />
           <Route exact path="/" render={() => <Main videos={videos}/>}/>
-          <Route path="/video" component={Video}/>
+          <Route path="/video" render={() => <Video videos={videos}/>}/>
           <Route path="/add-video" component={NewVideoForm}/>
           <Route path="/user" render={() => <User videos={videos}/>} />
           {/* <Route path={`/user/${user.id}/edit}`} component={EditUser} */}
