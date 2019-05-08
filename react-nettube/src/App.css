@@ -134,6 +134,20 @@ input[type=text] {
   transform: translate(0px, -10px);
 }
 
+.new-video-card {
+  /* display: inline-block; */
+  border: solid red;
+  padding: 30px;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  line-height: 3;
+}
+
+.video-submit-button {
+  
+}
+
 /* login page */
 .login-form-container {
   text-align: center;

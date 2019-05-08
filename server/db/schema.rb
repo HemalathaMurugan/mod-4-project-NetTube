@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_05_06_143724) do
     t.text "description"
     t.integer "likes"
     t.float "duration"
+    t.string "language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_videos_on_user_id"

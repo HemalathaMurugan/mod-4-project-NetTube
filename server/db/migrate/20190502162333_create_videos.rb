@@ -6,6 +6,7 @@ class CreateVideos < ActiveRecord::Migration[6.0]
       t.text :description  
       t.integer :likes
       t.float :duration
+      t.string :language
 
       t.timestamps
     end

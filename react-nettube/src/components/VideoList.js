@@ -3,10 +3,7 @@ import VideoCard from "./VideoCard";
 
 export default class VideoList extends React.Component {
 
-
   render() {
-
-
     return (
       <div className="video-list-container">
         <h1>{this.props.title}</h1>
@@ -15,10 +12,6 @@ export default class VideoList extends React.Component {
             <VideoCard video={video} />
           ))}
         </div>
-
-        {/* <div>
-            {this.loadVideos()}
-        </div> */}
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react'
+import NavBar from './NavBar'
 
-export default class Test extends React.Component {
+export default class NewVideoForm extends React.Component {
     constructor(props) {
       super(props);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -12,38 +13,55 @@ export default class Test extends React.Component {
       
       fetch('http://localhost:3000/videos', {
         method: 'POST',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+          // 'Content-Type': 'application/json'
+        },
         body: new FormData(event.target)
       })
-        .then( res => res.json())
-        .then(console.log)
+        .then(console.log(event.target))
 
     }
   
     render() {
         return (
           <div>
-            <div className="add-video-form-container">
-            <h1>Add a New Video</h1>
+          < NavBar />
+          <div className="new-video-card">
+            <div className='ui form'>
               <form onSubmit={e => this.handleSubmit(e)}>
-                <div class="add-video-form">
+                <div>
                   <input type="hidden" name="video[user_id]" value={1} />
-                  <label><b>Title</b></label>
-                    <br/>
-                  <input type="text" name="video[title]" placeholder="Add a title"/>
-                    <br/><br/>
-                  <label><b>Description</b></label>
-                    <br/>
-                  <input type="text" name="video[Description]" placeholder="Add a Description"/>
-                    <br/><br/>
-                  <input
-                    type="file"
-                    name="video[videoFile]"
-                  />
-                    <br/><br/>
-                  <input type="submit"/>
                 </div>
+                <div>
+                  <label>Title: </label>
+                  <input type="text" name="video[title]" />
+                </div>
+                <div>
+                  <label>Description: </label>
+                  <textarea name="video[description]" ></textarea>
+                </div>
+                <div>
+                  <label>Language: </label>
+                  <select name='video[language]'>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Rails">Rails</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="React">React</option>
+                  </select><br/>
+                </div>
+                <div>
+                  <input
+                    name="video[videoFile]"
+                    type="file"
+                  /><br />
+                </div>
+                <div>
+                  <input type="submit" className='ui red button'/>
+                </div>       
               </form>
             </div>
+          </div>
           </div>
         )
     }
