@@ -12,20 +12,14 @@
         User.create(
             user_name: Faker::Name.unique.name,
            
-            password_digest: Faker::Alphanumeric.alphanumeric(8)
+            password: Faker::Alphanumeric.alphanumeric(8)
         )
     end
 
-    hema = User.create(user_name: 'hema')
-    hema.password_digest = "password"
-    hema.save
+    hema = User.create(user_name: 'hema', password: 'password')
 
-    josephine = User.create(user_name: 'josephine')
-    josephine.password_digest = "password"
-    josephine.save
+    josephine = User.create(user_name: 'josephine', password: 'password')
 
-    trey = User.create(user_name: 'trey')
-    trey.password_digest = "pass1234"
-    trey.save
+    trey = User.create(user_name: 'trey', password: 'password')
 
-    js_one = Video.create(user_id: hema.id, title="javascript first video", description:"click here to watch the js tutorial",likes:0, duration: '')
+    #js_one = Video.create(user_id: hema.id, title:"javascript first video", description:"click here to watch the js tutorial",likes:0, duration: '')
