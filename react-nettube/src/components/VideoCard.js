@@ -10,14 +10,13 @@ export default class VideoCard extends React.Component {
                     <source src="mov_bbb.ogg" type="video/ogg"/>
                     Your browser does not support HTML5 video.
                     </video>
-                    <h4>{this.props.title}</h4>
-                    <p>{this.props.language}</p>
+                    <h4>Title: {this.props.video.title}</h4>
+                    <p>Language: {this.props.video.language}</p>
                     <p>Youtube Name</p>
                     <p>Views</p>
                     <p>Date</p>
                 </div>
-            </div>
-                
+            </div>   
         )
     }
 }
