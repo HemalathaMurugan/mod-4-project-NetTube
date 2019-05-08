@@ -26,15 +26,15 @@ class  Login extends  React.Component {
    .then(res=> res.json())
    .then(user => {
       localStorage.setItem('token', user.auth_token)
-      this.props.history.replace('/main')
+      this.props.checkAuth()
     })
-}
+  }
 
-handleChange = (e) => {
-  this.setState({
-    [e.target.user_name]: e.target.value
-  })
-}
+  handleChange = (e) => {
+    this.setState({
+      [e.target.user_name]: e.target.value
+    })
+  }
 
   render(){
     return (

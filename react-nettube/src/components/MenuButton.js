@@ -7,7 +7,7 @@ export default class MenuButton extends React.Component {
             <div className="menu">
                 <button className="menu-button">Menu</button>
                 <div className="menu-content">
-                    <Link to="/main">
+                    <Link to="/">
                         <li>Home</li>
                     </Link>
                     <Link to={"/user"}>

@@ -9,7 +9,7 @@ export default class VideoList extends React.Component {
         <h1>{this.props.title}</h1>
         <div className="video-list">
           {this.props.videos.map(video => (
-            <VideoCard {...video} />
+            <VideoCard selectVideo={this.props.selectVideo} {...video} />
           ))}
         </div>
       </div>
