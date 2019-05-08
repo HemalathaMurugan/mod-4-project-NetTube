@@ -94,13 +94,13 @@ export default class Main extends React.Component {
         return(
             <div className="main-page">
                 <NavBar handleSubmit={this.handleSubmit}/>
-                <Login handleLoginSubmit={this.handleLoginSubmit} />
-                <div className="filter-container">
+                {/* <Login handleLoginSubmit={this.handleLoginSubmit} /> */}
+                {/* <div className="filter-container">
                   <Filter
                     filterVideos={this.filterVideos}
                     languageOptions={this.languageOptions}
                   />
-                </div>
+                </div> */}
                 {this.loadVideos()}
             </div>
         )

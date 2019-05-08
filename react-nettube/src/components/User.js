@@ -9,7 +9,7 @@ const User = (props) => {
         <NavBar/>
         <h1>User Page</h1>
         <div className="user-videos">
-          <VideoList videos={props.videos}/>
+          <VideoList videos={props.videos} title="My Videos"/>
         </div>
       </div>
     );

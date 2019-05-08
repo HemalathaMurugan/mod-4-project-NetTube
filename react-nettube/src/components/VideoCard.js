@@ -5,7 +5,7 @@ export default class VideoCard extends React.Component {
         return(	
             <div className="video-card">      
                 <div className="video-card-details">
-                    <video width="400" controls>
+                    <video width="400" controls="controls" preload="metadata">
                     <source src="mov_bbb.mp4" type="video/mp4"/>
                     <source src="mov_bbb.ogg" type="video/ogg"/>
                     Your browser does not support HTML5 video.
