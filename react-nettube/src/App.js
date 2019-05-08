@@ -26,9 +26,9 @@ export default class App extends React.Component {
       <Router>
         <div className="App">
           <Switch>
-            <Route  path="/login" render={() => <Login handleLoginSubmit={this.handleLoginSubmit}/>}/>
+            <Route  exact path="/" render={() => <Login handleLoginSubmit={this.handleLoginSubmit}/>}/>
             <Route  path="/new" component={NewUser} />
-            <Route  exact path="/" render={() => <Main handleSearch={this.handleSearch} videos={this.state.videos}/>}/>
+            <Route  path="/main" render={() => <Main handleSearch={this.handleSearch} videos={this.state.videos}/>}/>
             <Route  path="/video" render={() => <Video handleSearch={this.handleSearch} videos={this.state.videos}/>}/>
             <Route  path="/add-video" component={NewVideoForm}/>
             <Route  path="/user" render={() => <User handleSearch={this.handleSearch} videos={this.state.videos}/>}/>
