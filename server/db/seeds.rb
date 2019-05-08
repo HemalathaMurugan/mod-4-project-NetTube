@@ -28,3 +28,4 @@
     trey.password_digest = "pass1234"
     trey.save
 
+    js_one = Video.create(user_id: hema.id, title="javascript first video", description:"click here to watch the js tutorial",likes:0, duration: '')
