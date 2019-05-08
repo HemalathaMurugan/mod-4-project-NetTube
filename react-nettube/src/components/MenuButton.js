@@ -10,17 +10,27 @@ export default class MenuButton extends React.Component {
                     <Link to="/">
                         <li>Home</li>
                     </Link>
-                    <Link to="/user">
+                    <Link to={"/user"}>
                         <li>My Channel</li>
                     </Link>
                     <Link to="/video">
                         <li>Video</li>
                     </Link>
-                        <li>Edit Profile</li>
-                    <Link to='/addvideo'>
+                    <Link to="/add-video">
                         <li>Add Video</li>
                     </Link>
-                        <li>Add Playlist</li>
+
+                    {/* <Link to={`/user/${user.id}`}>
+                        <li>My Channel</li>
+                    </Link>
+                    <Link to={`{/video/${video.id}`}>
+                        <li>Video</li>
+                    </Link> */}
+                    {/* <Link to={`/user/${user.id}/edit}`}>
+                        <li>Edit Profile</li>
+                    </Link> */}
+
+
                 </div>
             </div>
         )

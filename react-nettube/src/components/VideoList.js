@@ -1,43 +1,25 @@
-import React from 'react'
-import VideoCard from './VideoCard'
+import React from "react";
+import VideoCard from "./VideoCard";
 
 export default class VideoList extends React.Component {
 
-    loadVideos = () => {
-        if(this.props.filter === 'All') {
-            return this.props.videos.map((video) => {
-            return < VideoCard {...video} />
-        })} else {
-            return this.props.filteredVideos.map((video) => {
-                return <VideoCard {...video} />
-            })
-        }
-    }
 
-    render(){
-        return(
-            <div className="video-list">
-                <h1>Javascript</h1>
-                <div className="video-list-javascript">
-                    <VideoCard/>
-                    <VideoCard/>
-                    <VideoCard/>
-                </div>
+  render() {
 
-                <h1>Ruby</h1>
-                <div className="video-list-ruby">
-                    <VideoCard/>
-                </div>
 
-                <h1>React</h1>
-                <div className="video-list-react">
-                    <VideoCard/>
-                </div>
+    return (
+      <div className="video-list-container">
+        <h1>{this.props.title}</h1>
+        <div className="video-list">
+          {this.props.videos.map(video => (
+            <VideoCard video={video} />
+          ))}
+        </div>
 
-                {/* <div>
-                    {this.loadVideos()}
-                </div> */}
-            </div>	           
-        )
-    }
+        {/* <div>
+            {this.loadVideos()}
+        </div> */}
+      </div>
+    );
+  }
 }

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action  :logged_in?, only: [ :authenticate ]
+    skip_before_action  :logged_in?, only: [ :authenticate , :index]
     
     def create
         user = User.create(user_params)
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     end
     
     def index
-        render json: User.all
+        render json: User.all 
     end
     
     def show
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     end
 
     def authenticate
-        user = User.find_by(name: params[:name])
+        user = User.find_by(user_name: params[:user_name])
         
         if user.authenticate(params[:password])
             render json: user, methods: [ :auth_token ]
@@ -48,5 +48,9 @@ class UsersController < ApplicationController
     
     def selected_user
         @selected_user
+    end
+
+    def as_json(*)
+        super.except('password_digest')
     end
 end

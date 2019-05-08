@@ -6,7 +6,7 @@ export default class SearchBar extends React.Component {
         return(
             <div onChange={e => this.props.handleSubmit(e.target.value)} className="search-bar">
                 <input type="text" name="search" placeholder="Search videos"/>
-                <button className="tiny ui red button"  type="submit"><i className="fa fa-search"></i>Submit </button>
+                <button className=" tiny ui red basic button"  type="submit">Search</button>
             </div>
         )
     }

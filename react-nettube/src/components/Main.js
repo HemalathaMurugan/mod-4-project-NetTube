@@ -1,27 +1,34 @@
 import React from 'react'
 import VideoContainer from './VideoContainer'
 import NavBar from './NavBar'
-import AddComment from './AddComment'
-import Test from './Test'
+import Login from './Login'
+import Filter from "./Filter";
 
 
 export default class Main extends React.Component {
+  // state = {
+  //     videos: [],
+  //     searchResults: []
+  // }
 
 
-    state = {
-        videos: [],
-        filteredVideos: [],
-        searchResults: this.videos,
-        filter: 'All'
-    }
+  state = {
+    videos: this.props.videos,
+    filteredVideos: [],
+    searchResults: this.props.videos,
+    filter: "All"
+  };
 
-    filterVideos = (value) => {
-        this.setState({
-            filter: value,
-            filteredVideos: this.state.videos.filter((video) => video.language === value)
-        })
-    }
+  filterVideos = value => {
+    this.setState({
+      filter: value,
+      filteredVideos: this.state.videos.filter(
+        video => video.language === value
+      )
+    });
+  };
 
+    
     handleSubmit = (value) => {
         let original = this.state.videos
         let searchResults = original.filter(video => video.title.toLowerCase().includes(value))
@@ -29,32 +36,58 @@ export default class Main extends React.Component {
         this.loadVideos()
     }
 
-    loadVideos = () => {
-        if(this.state.videos == this.state.searchResults){
-            return <VideoContainer filterVideos={this.filterVideos} videos={this.state.videos} filteredVideos={this.state.filteredVideos} filter={this.state.filter}/>
-        } else {
-            return <VideoContainer filterVideos={this.filterVideos} videos={this.state.searchResults} filteredVideos={this.state.filteredVideos} filter={this.state.filter}/>
-        }
+  loadVideos = () => {
+    // console.log(this.state.searchResults)
+    // console.log(this.state.videos)
+    console.log(this.state);
+    if (this.state.videos === this.state.searchResults) {
+      return (
+        <VideoContainer
+          filterVideos={this.filterVideos}
+          videos={this.props.videos}
+          filteredVideos={this.state.filteredVideos}
+          filter={this.state.filter}
+          languageOptions={this.languageOptions}
+        />
+      );
+    } else {
+      return (
+        <VideoContainer
+          filterVideos={this.filterVideos}
+          videos={this.props.videos}
+          filteredVideos={this.state.filteredVideos}
+          filter={this.state.filter}
+          languageOptions={this.languageOptions}
+        />
+      );
     }
+  };
 
     loadTest = () => {
         return this.state.videos.map(video => < Test {...video}/>)
     }
 
     render(){
-        console.log(this.state.videos)
+       // console.log(this.handleLoginSubmit)
         return(
             <div className="main-page">
                 <NavBar handleSubmit={this.handleSubmit}/>
-                {/* {this.loadVideos()} */}
-                {this.loadTest()}
+
+                {/* <Login handleLoginSubmit={this.handleLoginSubmit} /> */}
+                {/* <div className="filter-container">
+                  <Filter
+                    filterVideos={this.filterVideos}
+                    languageOptions={this.languageOptions}
+                  />
+                </div> */}
+                {this.loadVideos()}
             </div>
         )
     }
 
-    componentDidMount(){
-        fetch('http://localhost:3000/videos')
-        .then((res) => res.json())
-        .then((videos) => this.setState({videos: videos}))      
-    }
+  componentDidMount(){
+      fetch('localhost:3000/videos')
+      .then((res) =>  res.json())
+      .then((videos) => this.setState({videos: videos}))
+  }
 }

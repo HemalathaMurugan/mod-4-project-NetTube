@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
 
-    # skip_before_action :verify_authenticity_token
+   # skip_before_action :verify_authenticity_token, only: [:index]
     def index
         render json: Video.all
     end
@@ -50,6 +50,10 @@ class VideosController < ApplicationController
     private
     def video_params
         params.require(:video).permit(:user_id, :title, :description, :language, :likes, :duration, :created_at, :videoFile)
+    end  
+    
+    def current_video
+        @current_video
     end
 
 end
