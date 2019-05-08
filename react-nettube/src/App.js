@@ -4,6 +4,7 @@ import Main from './components/Main'
 import Login from './components/Login'
 import Video from './components/Video'
 import User from './components/User'
+import EditVideo from './components/EditVideo'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact component={Main}/>
           <Route path="/video" component={Video}/>
           <Route path="/user" component={User}/>
+          <Route path="/edit-video/:id" component={EditVideo} />
         </Switch>
       </div>
     </Router>
