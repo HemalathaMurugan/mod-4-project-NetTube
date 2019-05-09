@@ -12,8 +12,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 export default class App extends React.Component {
   state = {
     videos: [],
-    searchResults: this.videos,
-    currentlyPlaying: null
+    searchResults: this.videos
   }
 
   handleSearch = (value) => {
@@ -22,12 +21,7 @@ export default class App extends React.Component {
     this.setState({searchResults: searchResults})
   }
 
-  selectVideo = (clickedVideo) => {
-    this.setState({
-      currentlyPlaying: clickedVideo
-    })
-    this.props.history.replace('/video')
-  }
+ 
 
   render() {
     if(localStorage.getItem('token') === null) {
@@ -47,7 +41,7 @@ export default class App extends React.Component {
           <Switch>
             <Route  path="/new" component={NewUser} />
             <Route  exact path="/" render={() => <Main selectVideo={this.selectVideo} handleSearch={this.handleSearch} videos={this.state.videos}/>}/>
-            <Route  path="/video" render={() => <Video handleSearch={this.handleSearch} currentlyPlaying={this.state.currentlyPlaying} videos={this.state.videos}/>}/>
+            <Route  path="/video/:id" render={(props) => <Video {...props} handleSearch={this.handleSearch} currentlyPlaying={this.state.currentlyPlaying} videos={this.state.videos}/>}/>
             <Route  path="/add-video" component={NewVideoForm}/>
             <Route  path="/user" render={() => <User handleSearch={this.handleSearch} videos={this.state.videos}/>}/>
             {/* <Route path={`/user/${user.id}/edit}`} component={EditUser} */}

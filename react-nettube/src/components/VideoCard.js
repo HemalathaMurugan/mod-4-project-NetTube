@@ -1,11 +1,12 @@
 import React from 'react'
+import { withRouter} from 'react-router-dom'
 
-export default class VideoCard extends React.Component {
+export default withRouter(class VideoCard extends React.Component {
     
     render(){
         let date = this.props.created_at
         return(	
-            <div onClick={() => this.props.selectVideo(this.props)} className="video-card">      
+            <div onClick={() => this.props.history.replace(`/video/${this.props.id}`)} className="video-card">      
                 <div className="video-card-details">
                     <video width="400" controls="controls" preload="metadata">
                     <source src={this.props.url} type="video/mp4"/>
@@ -19,4 +20,4 @@ export default class VideoCard extends React.Component {
             </div>   
         )
     }
-}
+})

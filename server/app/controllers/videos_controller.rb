@@ -1,6 +1,9 @@
 class VideosController < ApplicationController
 
    # skip_before_action :verify_authenticity_token, only: [:index]
+
+   before_action :define_current_video
+
     def index
         render json: Video.all
     end
